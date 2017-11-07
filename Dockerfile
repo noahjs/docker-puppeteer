@@ -1,6 +1,6 @@
 FROM node:8
 
-LABEL maintainer="yeongjinnn@gmail.com"
+LABEL maintainer="noah@prospectify.io"
 
 RUN apt-get update && \
     apt-get install -yq \
@@ -44,3 +44,6 @@ RUN apt-get update && \
         wget && \
     rm -r /var/lib/apt/lists/*
 
+RUN npm install -g node-gyp
+
+RUN sudo echo "nameserver 8.8.8.8" > /etc/resolv.conf
